@@ -3,10 +3,17 @@ import subprocess
 import paramiko
 from src.utils.validation import is_valid_ip
 
+
 class gpudata:
     def __init__(self):
         self.gpu_list = {}
         self.ssh_connector_pool = {}
+
+    def list_gpus(self):
+        return "192.168.0.1"
+
+    def parse_gpus(self, gpus: str):
+        return
 
     def update(self, data: dict):
         """
@@ -27,7 +34,7 @@ class gpudata:
     def mask(self, memory: int):
         self.gpu_list = {k: v for k, v in self.gpu_list.items() if v['memory_left'] >= memory}
 
-    def scan(self, memory: int, script: str):
+    def run(self, memory: int, script: str):
         self.mask(memory)
         self.sort()
         if self.gpu_list:
@@ -41,4 +48,10 @@ class gpudata:
             elif server_ip == 'local':
                 result = subprocess.run(script, capture_output=True, text=True)
             else:
-                pass
+                assert "Error server ip!"
+
+    def scan(self):
+        ls = self.list_gpus()
+        self.parse_gpus(ls)
+        while True:
+            self.run(10, "123")
