@@ -1,6 +1,6 @@
 import regex
 import subprocess
-from src.gpu.gpudata import gpudata
+from src.wannagpu.gpu.gpudata import gpudata
 
 
 class gpustat2(gpudata):

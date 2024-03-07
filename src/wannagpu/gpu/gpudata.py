@@ -1,7 +1,6 @@
-import time
 import subprocess
 import paramiko
-from src.utils.validation import is_valid_ip
+from src.wannagpu.utils.validation import is_valid_ip
 
 
 class gpudata:
