@@ -1,2 +1,1 @@
-![logo](static/1.jpg)
-
+<img src="static/1.jpg" alt="logo" style="zoom: 25%; display: block; margin: 0 auto;" />
